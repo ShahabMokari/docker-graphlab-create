@@ -5,6 +5,6 @@ build:
 	docker build --rm -t $(NAME) .
 
 run:
-	docker run -d --volumes-from notebook --name $(CONTAINER_NAME) -p 8888:8888 $(NAME)
+	docker run -d -v notebooks:/notebooks --name $(CONTAINER_NAME) -p 8888:8888 $(NAME)
 
 .PHONY: build
